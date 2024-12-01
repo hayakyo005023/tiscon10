@@ -107,7 +107,7 @@ public class EstimateController {
         }
 
         // 誕生日
-        LocalDate dateOfBirth = LocalDate.parse(userOrderForm.dateOfBirth(), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        LocalDate dateOfBirth = LocalDate.parse(userOrderForm.dateOfBirth(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         // 年齢が範囲内であるか確認する
         if (!estimateService.isAgeValid(dateOfBirth)) {
             // エラーの場合、Formの生年月日の項目にFieldErrorを追加
@@ -168,7 +168,7 @@ public class EstimateController {
         }
 
         // 誕生日
-        LocalDate dateOfBirth = LocalDate.parse(userOrderForm.dateOfBirth(), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        LocalDate dateOfBirth = LocalDate.parse(userOrderForm.dateOfBirth(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         // 年齢が範囲内であるか確認する
         if (!estimateService.isAgeValid(dateOfBirth)) {
             // エラーの場合、Formの生年月日の項目にFieldErrorを追加
@@ -182,8 +182,8 @@ public class EstimateController {
         InsuranceOrder insuranceOrder = new InsuranceOrder(
             null,  // 受付番号はデータベース登録時に自動採番されるためnullを設定
             Integer.parseInt(userOrderForm.insuranceType()),
-            userOrderForm.kanjiName(),
-            userOrderForm.kanaName(),
+            userOrderForm.kanjiSei().concat(userOrderForm.kanjiMei()),
+            userOrderForm.kanaSei().concat(userOrderForm.kanaMei()),
             userOrderForm.dateOfBirth(),
             userOrderForm.address(),
             userOrderForm.tel(),
@@ -231,6 +231,8 @@ public class EstimateController {
      */
     private UserOrderForm emptyForm() {
         return new UserOrderForm(
+            "",
+            "",
             "",
             "",
             "",

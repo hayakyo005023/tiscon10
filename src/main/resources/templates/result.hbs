@@ -47,16 +47,28 @@
             <col span="2">
             <tbody>
             <tr>
-              <th>氏名</th>
+              <th>姓</th>
               <td>
-                <span>{{userOrderForm.kanjiName}}</span>
+                <span>{{userOrderForm.kanjiSei}}</span>
               </td>
-              <input type="hidden" name="kanjiName" value="{{userOrderForm.kanjiName}}"/>
+              <input type="hidden" name="kanjiSei" value="{{userOrderForm.kanjiSei}}"/>
             </tr>
             <tr>
-              <th>シメイ（フリガナ）</th>
-              <td><span>{{userOrderForm.kanaName}}</span></td>
-              <input type="hidden" name="kanaName" value="{{userOrderForm.kanaName}}"/>
+              <th>名</th>
+              <td>
+                <span>{{userOrderForm.kanjiMei}}</span>
+              </td>
+              <input type="hidden" name="kanjiMei" value="{{userOrderForm.kanjiMei}}"/>
+            </tr>
+            <tr>
+              <th>セイ（フリガナ）</th>
+              <td><span>{{userOrderForm.kanaSei}}</span></td>
+              <input type="hidden" name="kanaSei" value="{{userOrderForm.kanaSei}}"/>
+            </tr>
+            <tr>
+              <th>メイ（フリガナ）</th>
+              <td><span>{{userOrderForm.kanaMei}}</span></td>
+              <input type="hidden" name="kanaMei" value="{{userOrderForm.kanaMei}}"/>
             </tr>
             <tr>
               <th>生年月日</th>

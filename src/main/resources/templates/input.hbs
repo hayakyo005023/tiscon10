@@ -27,26 +27,35 @@
         <fieldset>
           <h2 class="sub-title">ご本人について</h2>
           <label>
-            氏名
-            <input type="text" name="kanjiName" value="{{userOrderForm.kanjiName}}"/>
+            姓（例：佐藤）
+            <input type="text" name="kanjiSei" value="{{userOrderForm.kanjiSei}}"/>
           </label>
           <label>
-            シメイ（フリガナ）
-            <input type="text" name="kanaName" value="{{userOrderForm.kanaName}}"/>
+            名（例：太郎）
+            <input type="text" name="kanjiMei" value="{{userOrderForm.kanjiMei}}"/>
+          </label>
+          <label>
+            セイ（フリガナ）（例：サトウ）
+            <input type="text" name="kanaSei" value="{{userOrderForm.kanaSei}}"/>
+          </label>
+          <label>
+            メイ（フリガナ）（例：タロウ）
+            <input type="text" name="kanaMei" value="{{userOrderForm.kanaMei}}"/>
           </label>
           <label>
             生年月日
-            <input type="text" name="dateOfBirth" value="{{userOrderForm.dateOfBirth}}"/></label>
+            <br>
+            <input type="date" name="dateOfBirth" value="{{userOrderForm.dateOfBirth}}"/></label>
           <label>
             住所
             <input type="text" name="address" value="{{userOrderForm.address}}"/>
           </label>
           <label>
-            電話番号
+            電話番号（例：07012345678）
             <input type="text" name="tel" value="{{userOrderForm.tel}}"/>
           </label>
           <label>
-            メールアドレス
+            メールアドレス（例：tis1201@tis.co.jp）
             <input type="text" name="email" value="{{userOrderForm.email}}"/>
           </label>
         </fieldset>

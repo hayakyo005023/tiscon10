@@ -21,8 +21,10 @@ import jakarta.validation.constraints.Size;
  * @author TIS Taro
  *
  * @param insuranceType  保険種別
- * @param kanjiName      氏名
- * @param kanaName       シメイ（フリガナ）
+ * @param kanjiSei      姓
+ * @param kanaSei       セイ（フリガナ）
+ * @param kanjiMei       名
+ * @param kanaMei        メイ（フリガナ）
  * @param dateOfBirth    生年月日
  * @param address        住所
  * @param tel            電話番号
@@ -39,10 +41,16 @@ public record UserOrderForm(
     String insuranceType,    // 保険種別
 
     @NotBlank @Size(max = 60)
-    String kanjiName,    // 氏名
+    String kanjiSei,    // 姓
 
     @NotBlank @Pattern(regexp = "^[ァ-ヶー　]*$") @Size(max = 90)
-    String kanaName,    // シメイ（フリガナ）
+    String kanaSei,    // セイ（フリガナ）
+
+    @NotBlank @Size(max = 60)
+    String kanjiMei,    // 名
+
+    @NotBlank @Pattern(regexp = "^[ァ-ヶー　]*$") @Size(max = 90)
+    String kanaMei,    // メイ（フリガナ）
 
     @NotBlank @YYYYMMDD()
     String dateOfBirth,    // 生年月日

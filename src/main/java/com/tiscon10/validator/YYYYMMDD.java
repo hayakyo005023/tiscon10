@@ -17,7 +17,7 @@ import jakarta.validation.Payload;
 /**
  * 入力値が指定した形式の日付文字列であるかをバリデーションするクラス。
  * <p/>
- * 日付フォーマットのデフォルト値は「yyyy/MM/dd」である。
+ * 日付フォーマットのデフォルト値は「yyyy-MM-dd」である。
  *
  * @author TIS Taro
  */
@@ -53,7 +53,7 @@ public @interface YYYYMMDD {
      *
      * @return 指定されたフォーマット
      */
-    String allowFormat() default "yyyy/MM/dd";
+    String allowFormat() default "yyyy-MM-dd";
 
     /** 複数指定用のアノテーション */
     @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
